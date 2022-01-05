@@ -22,18 +22,13 @@ tasks {
         }
     }
 
-    /**
-     * spigot mapping jar
-     *
-     * 실제 환경 테스트를 위해서 서버에 모듈을 배포
-     * jar 파일에는 debug 모듈만 포함
-     */
     create<Jar>("debugJar") {
         dependsOn(projectAPI.tasks.named("publishAllPublicationsToDebugRepository"))
         dependsOn(projectCore.tasks.named("publishAllPublicationsToDebugRepository"))
 
         archiveBaseName.set(pluginName)
         archiveVersion.set("")
+        archiveClassifier.set("PAPER")
 
         from(project.sourceSets["main"].output)
 

@@ -1,31 +1,10 @@
-import io.github.monun.paperstrap.paperstrap
-
 plugins {
     kotlin("jvm") version "1.6.10"
-    id("io.github.monun.paperstrap") //buildSrc
 }
 
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
-    }
-}
-
-paperstrap {
-    File(rootDir, "${rootProject.name}-core").listFiles { file ->
-        file.isDirectory && file.name.startsWith("v")
-    }?.map { it.name.removePrefix("v") }?.forEach { version ->
-        include(version)
-    }
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("net.md-5:SpecialSource:1.11.0")
     }
 }
 
@@ -57,13 +36,6 @@ subprojects {
 //            useJUnitPlatform()
 //        }
 //    }
-}
-
-project(":${rootProject.name}-core") {
-    configurations {
-        create("mojangMapping")
-        create("spigotMapping")
-    }
 }
 
 tasks {

@@ -16,21 +16,3 @@
     * `./gradlew setupModules`
 
 ---
-
-### 의존성 가져오기 `net.minecraft.server`
-
-1. core 프로젝트 하위에 버전 이름의 프로젝트 생성
-    * `:core:v1.18`
-    * `:core:v1.18.1`
-2. 태스크 실행
-    * `./gradlew setupDependencies`
-
----
-
-### NOTE
-
-* 버전별 의존성 태스크 `setup<Module><Version>`
-  * `seupPaper1.18`
-  * `seupSpigotAll`
-  * `seupSpigot1.18`
-  * `seupSpigotAll`

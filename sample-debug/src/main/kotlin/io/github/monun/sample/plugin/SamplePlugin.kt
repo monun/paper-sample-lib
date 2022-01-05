@@ -5,6 +5,6 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class SamplePlugin: JavaPlugin() {
     override fun onEnable() {
-        println("nms version = ${Sample.version}")
+        println("Sample message = ${Sample.message}")
     }
 }

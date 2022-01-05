@@ -1,7 +1,7 @@
 package io.github.monun.sample
 
 interface Sample {
-    companion object: Sample by LibraryLoader.loadNMS(Sample::class.java)
+    val message: String
 
-    val version: String
+    companion object: Sample by LibraryLoader.loadImplement(Sample::class.java)
 }
